@@ -12,7 +12,8 @@ def home(request):
 	hawks_info = json.loads(hawksRE.content)
 	# ATLANTA Last Game 134880
 	hawksLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134880")
+	hawks_last = json.loads(hawksLG.content)
 	# ATLANTA Next Game 134880
 	hawksNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134880")
 
-	return render(request, "home.html", {'hawks': hawks_info})
+	return render(request, "home.html", {'hawks': hawks_info, 'hawks_last': hawks_last})

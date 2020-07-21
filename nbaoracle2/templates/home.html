@@ -12,11 +12,56 @@
 		{% csrf_token %}
 		<center>
 			<label>Team Selected:</label>
-			<textarea class="form-control form-control-sm" type="text"></textarea> 
+			{% for x in hawks.teams %}
+			<textarea class="form-control form-control-sm" type="text">{{ x.strTeam }}</textarea> 
+			{% endfor %}
+		</center>
+	</form>
+	<hr><br>
+	<form method="POST">
+		{% csrf_token %}
+		<center>
+			<label>Year Formed:</label>
+			{% for x in hawks.teams %}
+			<textarea class="form-control form-control-sm" type="text">{{ x.intFormedYear }}</textarea> 
+			{% endfor %}
+		</center>
+	</form>
+	<hr><br>
+	<form method="POST">
+		{% csrf_token %}
+		<center>
+			<label>Team Stadium:</label>
+			{% for x in hawks.teams %}
+			<textarea class="form-control form-control-sm" type="text">{{ x.strStadium }}</textarea> 
+			{% endfor %}
+		</center>
+	</form>
+	<hr><br>
+	<form method="POST">
+		{% csrf_token %}
+		<center>
+			<label>Team History:</label>
+			{% for x in hawks.teams %}
+			<textarea class="form-control form-control-sm" type="text">{{ x.strDescriptionEN }}</textarea> 
+			{% endfor %}
+		</center>
+	</form>
+	<hr><br>
+	<form method="POST">
+		{% csrf_token %}
+		<center>
+			<label>Last 5 Games Played:</label>
+			{% for x in hawks_last.results %}
+			<textarea class="form-control form-control-sm" type="text">{{ x.strHomeTeam}} {{ x.intHomeScore }} VS. {{ x.strAwayTeam }} {{ x.intAwayScore }}</textarea><br>
+			{% endfor %}
 		</center>
 	</form>
 
-	{{ hawks }}
+	<hr>
+
+		{{ hawks_last }}
+
 
 </div>
 
