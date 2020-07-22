@@ -17,6 +17,16 @@
             height: 100vh;
           }
 
+          .nav {
+            position: sticky;
+          }
+
+          .right {
+            position: absolute;
+            right: 350px;
+          }
+
+
           </style>
 
 
@@ -26,12 +36,14 @@
   <body>
 
     <!-- NavBar -->
+    <div class="sticky">
     <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand" href="#">
         <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs3.amazonaws.com%2Ffreebiesupply%2Flarge%2F2x%2Fnba-logo-transparent.png&f=1&nofb=1" width="20" height="30" class="d-inline-block align-top" alt="NBA" loading="lazy">
         Oracle
       </a>
     </nav>
+    </div>
 
     <!--Header-->
 
@@ -52,11 +64,13 @@
           align-content: stretch;
         }
       </style>
+
+      <div class="container">
         <div class="center">
 
             <div class="row">
 
-                <div class="dropdown east">
+                <div class="dropdown east right">
                   <button class="btn btn-light dropdown-toggle ml-5 mr-5" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Eastern Conference:
                   </button>
@@ -66,6 +80,7 @@
                     <a class="dropdown-item" href="#">Brooklyn Nets</a>
                   </div>
                 </div>
+
               
 
               <div class="dropdown west">
@@ -78,6 +93,7 @@
                     <a class="dropdown-item" href="#">Golden State Warriors</a>
                   </div>
               </div>
+      </div>
 
           </div>
 
