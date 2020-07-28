@@ -37,12 +37,15 @@ def lakers(request):
 	import json
 	# KCal the LAKERS are playing 134867
 	lakersRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Los_Angeles_Lakers")
-
 	lakers_info = json.loads(lakersRE.content)
+	# LAKERS last game info
+	lakersLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134867")
+	lakers_last = json.loads(lakersLG.content)
+	# LAKERS next game info
+	lakersNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134867")
+	lakers_next = json.loads(lakersNG.content)
 
-	testers = lakersRE
-
-	return render(request, "lakers.html", {'lakers': lakers_info})
+	return render(request, "lakers.html", {'lakers': lakers_info, 'lakers_last': lakers_last, 'lakers_next': lakers_next})
 
 
 #PELICANS
