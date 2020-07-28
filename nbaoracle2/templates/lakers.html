@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+<br><br><br><br>
+
+	<hr>
+
+
+	<form method="POST">
+		{% csrf_token %}
+		<center>
+			<label>Team Selected:</label>
+			{% for x in lakers.teams %}
+			<textarea class="form-control form-control-sm" type="text">{{ x.strTeam }}</textarea> 
+			{% endfor %}
+		</center>
+	</form>
+
+{% endblock %}

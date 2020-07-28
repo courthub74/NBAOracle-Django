@@ -38,7 +38,7 @@
     <!-- NavBar -->
     <div class="sticky">
     <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="{% url 'home' %}">
         <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs3.amazonaws.com%2Ffreebiesupply%2Flarge%2F2x%2Fnba-logo-transparent.png&f=1&nofb=1" width="20" height="30" class="d-inline-block align-top" alt="NBA" loading="lazy">
         Oracle
       </a>
@@ -70,29 +70,47 @@
 
             <div class="row">
 
-                <div class="dropdown east right">
+           <!--      <div class="dropdown east right">
                   <button class="btn btn-light dropdown-toggle ml-5 mr-5" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Eastern Conference:
                   </button>
-                  <div class="dropdown-menu dropdown-block" aria-labelledby="dropdownMenuButton" type="submit">
+                  <div class="dropdown-menu dropdown-block" aria-labelledby="dropdownMenuButton" type="submit" name="nba">
                     <a class="dropdown-item" href="#">Atlanta Hawks</a>
                     <a class="dropdown-item" href="#">Boston Celtics</a>
                     <a class="dropdown-item" href="#">Brooklyn Nets</a>
                   </div>
+                </div> -->
+
+                <form method="POST">
+                  {% csrf_token %}
+                <div class="dropdown east right">
+                  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Eastern Conference:
+                    <span class="caret"></span></button>
+                      <ul class="dropdown-menu">
+                        <li><a href="{% url 'hawks' %}">Atlanta Hawks</a></li>
+                        <li><a href="#">Boston Celtics</a></li>
+                        <li><a href="#">Brooklyn Nets</a></li>
+                      </ul>
+                    </select>
                 </div>
+                </form>
 
               
 
-              <div class="dropdown west">
-                  <button class="btn btn-light dropdown-toggle ml-5 mr-5" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Western Conference:
-                  </button>
-                  <div class="dropdown-menu dropdown-block" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Dallas Mavericks</a>
-                    <a class="dropdown-item" href="#">Denver Nuggets</a>
-                    <a class="dropdown-item" href="#">Golden State Warriors</a>
-                  </div>
-              </div>
+                <form method="POST">
+                  {% csrf_token %}
+                <div class="dropdown west">
+                  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Western Conference:
+                    <span class="caret"></span></button>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">Dallas Mavericks</a></li>
+                        <li><a href="#">Denver Nuggets</a></li>
+                        <li><a href="{% url 'lakers' %}">Los Angeles Lakers</a></li>
+                        <li><a href="{% url 'pelicans' %}">New Orleans Pelicans</a></li>
+                      </ul>
+                    </select>
+                </div>
+                </form>
       </div>
 
           </div>
@@ -100,6 +118,8 @@
         </div>
 
       </div>
+
+</div>
 
 
     </div>

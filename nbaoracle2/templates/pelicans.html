@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+
+
+<center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fsco%2Fthumb%2F0%2F0d%2FNew_Orleans_Pelicans_logo.svg%2F1280px-New_Orleans_Pelicans_logo.svg.png&f=1&nofb=1" width="300" height="200"></center>
+
+<hr>
+
+	<form method="POST">
+		{% csrf_token %}
+		<center>
+			<label>Team Selected:</label>
+			{% for x in pelicans_info.teams %}
+			<textarea class="form-control form-control-sm" type="text" value="{{ x.strTeam }}">{{ x.strTeam }}</textarea> 
+			{% endfor %}
+		</center>
+	</form>
+	<hr><br>
+	<form method="POST">
+		{% csrf_token %}
+		<center>
+			<label>Year Formed:</label>
+			{% for x in pelicans_info.teams %}
+			<textarea class="form-control form-control-sm" type="text">{{ x.intFormedYear }}</textarea> 
+			{% endfor %}
+		</center>
+	</form>
+	<hr><br>
+
+	<form method="POST">
+		{% csrf_token %}
+		<center>
+			<label>Team Stadium:</label>
+			{% for x in pelicans_info.teams %}
+			<textarea class="form-control form-control-sm" type="text">{{ x.strStadium }}</textarea> 
+			{% endfor %}
+		</center>
+	</form>
+	<hr><br>
+
+	<form method="POST">
+		{% csrf_token %}
+		<center>
+			<label>Team History:</label>
+			{% for x in pelicans_info.teams %}
+			<textarea class="form-control form-control-sm" type="text">{{ x.strDescriptionEN }}</textarea> 
+			{% endfor %}
+		</center>
+	</form>
+	<hr><br>
+
+
+	<form method="POST">
+		{% csrf_token %}
+		<center>
+			<label>Last 5 Games Played:</label>
+			<br><br>
+			{% for x in pelicans_last.results %}
+			{{x.dateEventLocal}}
+			<textarea class="form-control form-control-sm" type="text">Home: {{ x.strHomeTeam}} {{ x.intHomeScore }} | Away: {{ x.strAwayTeam }} {{ x.intAwayScore }}</textarea><br>
+			{% endfor %}
+		</center>
+	</form>
+
+	<br><br><hr>
+
+	<form method="POST">
+		{% csrf_token %}
+		<center>
+			<label>Next Game:</label>
+			{% for x in pelicans_next.events %}
+			<br><br>
+			{{ x.dateEventLocal }}
+			<textarea class="form-control form-control-sm" type="text">{{ x.strEventAlternate }}</textarea> 
+			{% endfor %}
+		</center>
+	</form>
+	<hr><br>
+
+	<hr>
+
+</div>
+
+
+{% endblock %}
