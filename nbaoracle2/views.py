@@ -162,6 +162,28 @@ def lakers(request):
 	return render(request, "lakers.html", {'lakers': lakers_info, 'lakers_last': lakers_last, 'lakers_next': lakers_next, 'notfound': notfound})
 
 
+####################################################################################################################################################
+
+#MILWAUKEE
+def bucks(request):
+	import requests
+	import json
+
+	# MILWAUKEE BUCKS General Info 134874
+	bucksRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Milwaukee_Bucks")
+	bucks_info = json.loads(bucksRE.content)
+	# Last Game info for BUCKS 134874
+	bucksLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134874")
+	bucks_last = json.loads(bucksLG.content)
+	# Next Game info for BUCKS 134874
+	bucksNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134874")
+	bucks_next = json.loads(bucksNG.content)
+
+	notfound = "This Team might not be playing or next game is to be determined"
+
+	return render(request, "bucks.html", {'bucks': bucks_info, 'bucks_last': bucks_last, 'bucks_next': bucks_next, 'notfound': notfound})
+
+
 #PELICANS
 def pelicans(request):
 	import requests

@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+
+
+
+<center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fworldsportlogos.com%2Fwp-content%2Fuploads%2F2018%2F03%2FMilwaukee-Bucks-logo.png&f=1&nofb=1" width="425" height="250"></center>
+
+<hr>
+
+	<form method="POST">
+		{% csrf_token %}
+		<center>
+			<label>Team Selected:</label>
+			
+			<textarea class="form-control form-control-sm" type="text" value="{{ x.strTeam }}">Milwauke Bucks</textarea> 
+			
+		</center>
+	</form>
+	<hr><br>
+	<form method="POST">
+		{% csrf_token %}
+		<center>
+			<label>Year Formed:</label>
+			
+			<textarea class="form-control form-control-sm" type="text">1968</textarea> 
+			
+		</center>
+	</form>
+	<hr><br>
+
+	<form method="POST">
+		{% csrf_token %}
+		<center>
+			<label>Team Stadium:</label>
+			
+			<textarea class="form-control form-control-sm" type="text">Fiserv Forum</textarea> 
+			
+		</center>
+	</form>
+	<hr><br>
+
+
+	<form method="POST">
+		{% csrf_token %}
+		<center>
+			<label>Last 5 Games Played:</label>
+			<br><br>
+			{% for x in bucks_last.results %}
+			{{x.dateEventLocal}}
+			<textarea class="form-control form-control-sm" type="text">Home: {{ x.strHomeTeam}} {{ x.intHomeScore }} | Away: {{ x.strAwayTeam }} {{ x.intAwayScore }}</textarea><br>
+			{% endfor %}
+		</center>
+	</form>
+
+	<br><br><hr>
+
+	<form method="POST">
+		{% csrf_token %}
+		<center>
+			<label>Next Game:</label>
+			<br>
+
+			{% if notfound %}
+				<center><b>{{ notfound }}</b></center>
+			{% else %}
+				{% for x in bucks_next.events %}
+				<br><br>
+				{{ x.dateEventLocal }}
+				<textarea class="form-control form-control-sm" type="text">{{ x.strEventAlternate }}</textarea> 
+				{% endfor %}
+			{% endif %}
+		</center>
+	</form>
+	<hr><br>
+
+	<hr>
+
+</div>
+
+
+{% endblock %}
