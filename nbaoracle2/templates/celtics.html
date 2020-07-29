@@ -6,7 +6,7 @@
 
 
 
-<center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fseeklogo.net%2Fwp-content%2Fuploads%2F2016%2F07%2Fatlanta-hawks-vector-logo-400x400.png&f=1&nofb=1" width="310" height="280"></center>
+<center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.vexels.com%2Fmedia%2Fusers%2F3%2F129509%2Fisolated%2Fpreview%2Fb9439b4f4a5115e4e7995ab6450ab1b0-boston-celtics-logo-by-vexels.png&f=1&nofb=1" width="250" height="200"></center>
 
 <hr>
 
@@ -14,8 +14,8 @@
 		{% csrf_token %}
 		<center>
 			<label>Team Selected:</label>
-			{% for x in hawks_info.teams %}
-			<textarea class="form-control form-control-sm" type="text" value="{{ x.strTeam }}">{{ x.strTeam }}</textarea> 
+			{% for x in celtics_info.teams %}
+			<textarea class="form-control form-control-sm" type="text">{{ x.strTeam }}</textarea> 
 			{% endfor %}
 		</center>
 	</form>
@@ -24,7 +24,7 @@
 		{% csrf_token %}
 		<center>
 			<label>Year Formed:</label>
-			{% for x in hawks_info.teams %}
+			{% for x in celtics_info.teams %}
 			<textarea class="form-control form-control-sm" type="text">{{ x.intFormedYear }}</textarea> 
 			{% endfor %}
 		</center>
@@ -35,20 +35,19 @@
 		{% csrf_token %}
 		<center>
 			<label>Team Stadium:</label>
-			{% for x in hawks_info.teams %}
+			{% for x in celtics_info.teams %}
 			<textarea class="form-control form-control-sm" type="text">{{ x.strStadium }}</textarea> 
 			{% endfor %}
 		</center>
 	</form>
 	<hr><br>
 
-
 	<form method="POST">
 		{% csrf_token %}
 		<center>
 			<label>Last 5 Games Played:</label>
 			<br><br>
-			{% for x in hawks_last.results %}
+			{% for x in celtics_last.results %}
 			{{x.dateEventLocal}}
 			<textarea class="form-control form-control-sm" type="text">Home: {{ x.strHomeTeam}} {{ x.intHomeScore }} | Away: {{ x.strAwayTeam }} {{ x.intAwayScore }}</textarea><br>
 			{% endfor %}
@@ -61,16 +60,17 @@
 		{% csrf_token %}
 		<center>
 			<label>Next Game:</label>
-			<br>
 
 			{% if notfound %}
 				<center><b>{{ notfound }}</b></center>
 			{% else %}
-				{% for x in hawks_next.events %}
-				<br><br>
-				{{ x.dateEventLocal }}
-				<textarea class="form-control form-control-sm" type="text">{{ x.strEventAlternate }}</textarea> 
-				{% endfor %}
+
+					{% for x in celtics_next.events %}
+					<br><br>
+					{{ x.dateEventLocal }}
+					<textarea class="form-control form-control-sm" type="text">{{ x.strEventAlternate }}</textarea> 
+					{% endfor %}
+				
 			{% endif %}
 		</center>
 	</form>
