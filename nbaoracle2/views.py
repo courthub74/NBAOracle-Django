@@ -26,7 +26,7 @@ def hawks(request):
 	hawksNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134880")
 	hawks_next = json.loads(hawksNG.content)
 
-	notfound = "This Team might not be playing or next game is to be determined"
+	notfound = "If no game shows, it's because this team didn't qualify for the remainder of the 2020 season or the next game is to be determined"
 
 	return render(request, "hawks.html", {'hawks_info': hawks_info, 'hawks_last': hawks_last, 'hawks_next': hawks_next, 'notfound': notfound})
 
@@ -50,7 +50,7 @@ def celtics(request):
 	celticsNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134860")
 	celtics_next = json.loads(celticsNG.content)
 
-	notfound = "This Team might not be playing or next game is to be determined"
+	notfound = "If no game shows, it's because this team didn't qualify for the remainder of the 2020 season or the next game is to be determined"
 
 	return render(request, "celtics.html", {'celtics_info': celtics_info, 'celtics_last': celtics_last, 'celtics_next': celtics_next, 'notfound': notfound})
 
@@ -114,7 +114,7 @@ def mavericks(request):
 	mavsNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134875")
 	mavs_next = json.loads(mavsNG.content)
 
-	notfound = "This Team might not be playing or next game is to be determined"
+	notfound = "If no game shows, it's because this team didn't qualify for the remainder of the 2020 season or the next game is to be determined"
 
 	return render(request, "mavs.html", {'mavs_info': mavs_info, 'mavs_last': mavs_last, 'mavs_next': mavs_next, 'notfound': notfound})
 
@@ -135,7 +135,7 @@ def nuggets(request):
 	nuggetsNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134885")
 	nuggets_next = json.loads(nuggetsNG.content)
 
-	notfound = "This Team might not be playing or next game is to be determined"
+	notfound = "If no game shows, it's because this team didn't qualify for the remainder of the 2020 season or the next game is to be determined"
 
 	return render(request, "nuggets.html", {'nuggets_info': nuggets_info, 'nuggets_last': nuggets_last, 'nuggets_next': nuggets_next, 'notfound': notfound})
 
@@ -157,9 +157,9 @@ def lakers(request):
 	lakersNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134867")
 	lakers_next = json.loads(lakersNG.content)
 
-	notfound = "This Team might not be playing or next game is to be determined"
+	notfound = "If no game shows, it's because this team didn't qualify for the remainder of the 2020 season or the next game is to be determined"
 
-	return render(request, "lakers.html", {'lakers': lakers_info, 'lakers_last': lakers_last, 'lakers_next': lakers_next, 'notfound': notfound})
+	return render(request, "lakers.html", {'lakers': lakers_info, 'lakers_last': lakers_last, 'lakers_next': lakers_next,'notfound': notfound})
 
 
 ####################################################################################################################################################
@@ -179,7 +179,7 @@ def bucks(request):
 	bucksNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134874")
 	bucks_next = json.loads(bucksNG.content)
 
-	notfound = "This Team might not be playing or next game is to be determined"
+	notfound = "If no game shows, it's because this team didn't qualify for the remainder of the 2020 season or the next game is to be determined"
 
 	return render(request, "bucks.html", {'bucks': bucks_info, 'bucks_last': bucks_last, 'bucks_next': bucks_next, 'notfound': notfound})
 
@@ -199,7 +199,7 @@ def pelicans(request):
 	pelicansNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134878")
 	pelicans_next = json.loads(pelicansNG.content)
 
-	notfound = "This Team might not be playing or next game is to be determined"
+	notfound = "If no game shows, it's because this team didn't qualify for the remainder of the 2020 season or the next game is to be determined"
 
 	return render(request, "pelicans.html", {'pelicans_info': pelicans_info,'pelicans_last': pelicans_last, 'pelicans_next': pelicans_next, 'notfound': notfound})
 

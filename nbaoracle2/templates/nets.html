@@ -62,15 +62,10 @@
 		<center>
 			<label>Next Game:</label>
 
-			{% if notfound %}
-					<center><b>{{ notfound }}</b></center>
-				{% else %}
 					{% for x in nets_next.events %}
-					<br><br>
-					{{ x.dateEventLocal }}
 					<textarea class="form-control form-control-sm" type="text">{{ x.strEventAlternate }}</textarea> 
 					{% endfor %}
-			{% endif %}
+					<center><small>{{ notfound }}</small></center>
 		</center>
 	</form>
 	<hr><br>
