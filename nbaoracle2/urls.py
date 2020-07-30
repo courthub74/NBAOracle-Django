@@ -3,7 +3,9 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name="home"),
+    path('blazers/', views.trailblazers, name="blazers"),
     path('bucks/', views.bucks, name="bucks"),
+    path('bulls/', views.bulls, name="bulls"),
     path('celtics/', views.celtics, name="celtics"),
     path('nets/', views.nets, name="nets"),
     path('hornets/', views.hornets, name="hornets"),
@@ -12,4 +14,5 @@ urlpatterns = [
     path('lakers/', views.lakers, name="lakers"),
     path('pelicans/', views.pelicans, name="pelicans"),
     path('hawks/', views.hawks, name="hawks"),
+    path('rockets/', views.rockets, name="rockets"),
 ]
