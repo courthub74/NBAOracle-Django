@@ -6,14 +6,14 @@
 
 
 
-<center><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fispizzahalfprice.com%2Fimages%2Fteam-logos%2FBrooklynNets.png&f=1&nofb=1" width="250" height="200"></center>
+<center><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fispizzahalfprice.com%2Fimages%2Fteam-logos%2FBrooklynNets.png&f=1&nofb=1" width="240" height="200"></center>
 
 <hr>
 
 	<form method="POST">
 		{% csrf_token %}
 		<center>
-			<label>Team Selected:</label>
+			<label><strong>Team Selected:</strong></label>
 			{% for x in nets_info.teams %}
 			<textarea class="form-control form-control-sm" type="text" value="{{ x.strTeam }}">{{ x.strTeam }}</textarea> 
 			{% endfor %}
@@ -23,7 +23,7 @@
 	<form method="POST">
 		{% csrf_token %}
 		<center>
-			<label>Year Formed:</label>
+			<label><strong>Year Formed:</strong></label>
 			{% for x in nets_info.teams %}
 			<textarea class="form-control form-control-sm" type="text">{{ x.intFormedYear }}</textarea> 
 			{% endfor %}
@@ -34,7 +34,7 @@
 	<form method="POST">
 		{% csrf_token %}
 		<center>
-			<label>Team Stadium:</label>
+			<label><strong>Team Stadium:</strong></label>
 			{% for x in nets_info.teams %}
 			<textarea class="form-control form-control-sm" type="text">{{ x.strStadium }}</textarea> 
 			{% endfor %}
@@ -46,7 +46,7 @@
 	<form method="POST">
 		{% csrf_token %}
 		<center>
-			<label>Last 5 Games Played:</label>
+			<label><strong>Last 5 Games Played:</strong></label>
 			<br><br>
 			{% for x in nets_last.results %}
 			{{x.dateEventLocal}}
@@ -60,7 +60,7 @@
 	<form method="POST">
 		{% csrf_token %}
 		<center>
-			<label>Next Game:</label>
+			<label><strong>Next Game:</strong></label>
 
 					{% for x in nets_next.events %}
 					<textarea class="form-control form-control-sm" type="text">{{ x.strEventAlternate }}</textarea> 

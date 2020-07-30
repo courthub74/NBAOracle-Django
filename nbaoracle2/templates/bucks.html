@@ -14,7 +14,7 @@
 	<form method="POST">
 		{% csrf_token %}
 		<center>
-			<label>Team Selected:</label>
+			<label><strong>Team Selected:</strong></label>
 			
 			<textarea class="form-control form-control-sm" type="text" value="{{ x.strTeam }}">Milwauke Bucks</textarea> 
 			
@@ -24,7 +24,7 @@
 	<form method="POST">
 		{% csrf_token %}
 		<center>
-			<label>Year Formed:</label>
+			<label><strong>Year Formed:</strong></label>
 			
 			<textarea class="form-control form-control-sm" type="text">1968</textarea> 
 			
@@ -35,7 +35,7 @@
 	<form method="POST">
 		{% csrf_token %}
 		<center>
-			<label>Team Stadium:</label>
+			<label><strong>Team Stadium:</strong></label>
 			
 			<textarea class="form-control form-control-sm" type="text">Fiserv Forum</textarea> 
 			
@@ -47,7 +47,7 @@
 	<form method="POST">
 		{% csrf_token %}
 		<center>
-			<label>Last 5 Games Played:</label>
+			<label><strong>Last 5 Games Played:</strong></label>
 			<br><br>
 			{% for x in bucks_last.results %}
 			{{x.dateEventLocal}}
@@ -61,7 +61,7 @@
 	<form method="POST">
 		{% csrf_token %}
 		<center>
-			<label>Next Game:</label>
+			<label><strong>Next Game:</strong></label>
 			<br>
 
 				{% for x in bucks_next.events %}
