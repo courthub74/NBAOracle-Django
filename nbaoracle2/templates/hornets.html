@@ -4,22 +4,19 @@
 
 <div class="container">
 
+<style type="text/css">
+	.white {
+		color: black;
+		font-size: 20px;
+	}
+</style>
 
-
+<center><label class="white"><strong>Team Selected:</strong></label></center>
 <center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2Fthumb%2Fc%2Fc4%2FCharlotte_Hornets_%25282014%2529.svg%2F1200px-Charlotte_Hornets_%25282014%2529.svg.png&f=1&nofb=1" width="260" height="200"></center>
+<center><label class="white"><strong>Charlotte Hornets</strong></label></center>
 
 <hr>
 
-	<form method="POST">
-		{% csrf_token %}
-		<center>
-			<label><strong>Team Selected:</strong></label>
-			{% for x in hornets_info.teams %}
-			<textarea class="form-control form-control-sm" type="text" value="{{ x.strTeam }}">{{ x.strTeam }}</textarea> 
-			{% endfor %}
-		</center>
-	</form>
-	<hr><br>
 	<form method="POST">
 		{% csrf_token %}
 		<center>

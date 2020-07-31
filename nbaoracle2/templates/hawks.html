@@ -4,9 +4,16 @@
 
 <div class="container">
 
+<style type="text/css">
+	.white {
+		color: black;
+		font-size: 20px;
+	}
+</style>
 
-
+<center><label class="white"><strong>Team Selected:</strong></label></center>
 <center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fseeklogo.net%2Fwp-content%2Fuploads%2F2016%2F07%2Fatlanta-hawks-vector-logo-400x400.png&f=1&nofb=1" width="310" height="280"></center>
+<center><label class="white"><strong>Atlanta Hawks</strong></label></center>
 
 <hr>
 
@@ -60,7 +67,7 @@
 	<form method="POST">
 		{% csrf_token %}
 		<center>
-			<label><strong>Next Game:</strong></label>
+			<label><strong>Next Game(s):</strong></label>
 			<br>
 
 			{% for x in hawks_next.events %}

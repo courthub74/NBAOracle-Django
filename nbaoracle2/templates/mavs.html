@@ -4,22 +4,19 @@
 
 <div class="container">
 
+<style type="text/css">
+	.white {
+		color: black;
+		font-size: 20px;
+	}
+</style>
 
-
+<center><label class="white"><strong>Team Selected:</strong></label></center>
 <center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftradablebits.com%2Fstatic%2Fimages%2Fsolutions_sports_page%2Flogos%2Flogo-dallas-mavericks.png&f=1&nofb=1" width="250" height="250"></center>
+<center><label class="white"><strong>Dallas Mavericks</strong></label></center>
 
 <hr>
 
-	<form method="POST">
-		{% csrf_token %}
-		<center>
-			<label><strong>Team Selected:</strong></label>
-			{% for x in mavs_info.teams %}
-			<textarea class="form-control form-control-sm" type="text" value="{{ x.strTeam }}">{{ x.strTeam }}</textarea> 
-			{% endfor %}
-		</center>
-	</form>
-	<hr><br>
 	<form method="POST">
 		{% csrf_token %}
 		<center>
@@ -60,7 +57,7 @@
 	<form method="POST">
 		{% csrf_token %}
 		<center>
-			<label><strong>Next Game:</strong></label>
+			<label><strong>Next Game(s):</strong></label>
 
 				{% for x in mavs_next.events %}
 				<textarea class="form-control form-control-sm" type="text">{{ x.strEventAlternate }} | {{ x.dateEventLocal }}</textarea> 

@@ -2,7 +2,6 @@
 
 {% block content %}
 
-
 <div class="container">
 
 <style type="text/css">
@@ -13,8 +12,8 @@
 </style>
 
 <center><label class="white"><strong>Team Selected:</strong></label></center>
-<center><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcontent.sportslogos.net%2Flogos%2F6%2F230%2Ffull%2F9260_houston_rockets-alternate-2020.png&f=1&nofb=1" width="210" height="230"></center>
-<center><label class="white"><strong>Houston Rockets</strong></label></center>
+<center><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Flogos-download.com%2Fwp-content%2Fuploads%2F2016%2F04%2FGolden_State_Warriors_logo_alternative.png&f=1&nofb=1" width="240" height="240"></center>
+<center><label class="white"><strong>Golden State Warriors</strong></label></center>
 
 <hr>
 
@@ -22,8 +21,8 @@
 		{% csrf_token %}
 		<center>
 			<label><strong>Year Formed:</strong></label>
-			{% for x in rockets_info.teams %}
-				<textarea class="form-control form-control-sm" type="text">{{ x.intFormedYear }}</textarea> 
+			{% for x in warriors_info.teams %}
+			<textarea class="form-control form-control-sm" type="text">{{ x.intFormedYear }}</textarea> 
 			{% endfor %}
 		</center>
 	</form>
@@ -33,8 +32,8 @@
 		{% csrf_token %}
 		<center>
 			<label><strong>Team Stadium:</strong></label>
-			{% for x in rockets_info.teams %}
-				<textarea class="form-control form-control-sm" type="text">{{ x.strStadium }}</textarea> 
+			{% for x in warriors_info.teams %}
+			<textarea class="form-control form-control-sm" type="text">{{ x.strStadium }}</textarea> 
 			{% endfor %}
 		</center>
 	</form>
@@ -46,7 +45,7 @@
 		<center>
 			<label><strong>Last 5 Games Played:</strong></label>
 			<br><br>
-			{% for x in rockets_last.results %}
+			{% for x in warriors_last.results %}
 			{{x.dateEventLocal}}
 			<textarea class="form-control form-control-sm" type="text">Home: {{ x.strHomeTeam}} {{ x.intHomeScore }} | Away: {{ x.strAwayTeam }} {{ x.intAwayScore }}</textarea><br>
 			{% endfor %}
@@ -59,13 +58,12 @@
 		{% csrf_token %}
 		<center>
 			<label><strong>Next Game(s):</strong></label>
-			<br>
 
-				{% for x in rockets_next.events %}
-				<textarea class="form-control form-control-sm" type="text">{{ x.strEventAlternate }}</textarea> 
-				{% endfor %}
-				<center><small>{{ notfound }}</small></center>
-
+					{% for x in warriors_next.events %}
+					<textarea class="form-control form-control-sm" type="text">{{ x.strEventAlternate }}</textarea> 
+					{% endfor %}
+					<center><small>{{ notfound }}</small></center>
+			
 		</center>
 	</form>
 	<hr><br>

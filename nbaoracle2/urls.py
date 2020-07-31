@@ -11,8 +11,10 @@ urlpatterns = [
     path('hornets/', views.hornets, name="hornets"),
     path('mavericks/', views.mavericks, name="mavs"),
     path('nuggets/', views.nuggets, name="nuggets"),
+    path('pistons/', views.pistons, name="pistons"),
     path('lakers/', views.lakers, name="lakers"),
     path('pelicans/', views.pelicans, name="pelicans"),
     path('hawks/', views.hawks, name="hawks"),
     path('rockets/', views.rockets, name="rockets"),
+    path('warriors/', views.warriors, name="warriors"),
 ]
