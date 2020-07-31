@@ -20,16 +20,6 @@
 	<form method="POST">
 		{% csrf_token %}
 		<center>
-			<label><strong>Team Selected:</strong></label>
-			{% for x in pelicans_info.teams %}
-			<textarea class="form-control form-control-sm" type="text" value="{{ x.strTeam }}">{{ x.strTeam }}</textarea> 
-			{% endfor %}
-		</center>
-	</form>
-	<hr><br>
-	<form method="POST">
-		{% csrf_token %}
-		<center>
 			<label><strong>Year Formed:</strong></label>
 			{% for x in pelicans_info.teams %}
 			<textarea class="form-control form-control-sm" type="text">{{ x.intFormedYear }}</textarea> 
