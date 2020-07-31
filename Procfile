@@ -1,1 +1,1 @@
-web:gunicorn nbaoracle.wsgi
+web: gunicorn nbaoracle.wsgi
