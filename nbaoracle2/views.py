@@ -222,7 +222,50 @@ def lakers(request):
 
 	notfound = "If no game shows, it's because this team didn't qualify for the remainder of the 2020 season or the next game is to be determined"
 
-	return render(request, "lakers.html", {'lakers': lakers_info, 'lakers_last': lakers_last, 'lakers_next': lakers_next,'notfound': notfound})
+	return render(request, "lakers.html", {'lakers_info': lakers_info, 'lakers_last': lakers_last, 'lakers_next': lakers_next,'notfound': notfound})
+
+
+####################################################################################################################################################
+
+#CLIPPERS
+def clippers(request):
+	import requests
+	import json
+
+	# CLIPPERS General Info 134866
+	clippersRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Los%20Angeles%20Clippers")
+	clippers_info = json.loads(clippersRE.content)
+	# CLIPPERS last game info 134866
+	clippersLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134866")
+	clippers_last = json.loads(clippersLG.content)
+	# CLIPPERS next game info 134866
+	clippersNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134866")
+	clippers_next = json.loads(clippersNG.content)
+
+	notfound = "If no game shows, it's because this team didn't qualify for the remainder of the 2020 season or the next game is to be determined"
+
+	return render(request, "clippers.html", {'clippers_info': clippers_info, 'clippers_last': clippers_last, 'clippers_next': clippers_next,'notfound': notfound})
+
+####################################################################################################################################################
+
+#MIAMI
+def heat(request):
+	import requests
+	import json
+
+	# HEAT General Info 134882
+	heatRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Miami_Heat")
+	heat_info = json.loads(heatRE.content)
+	# Last Game Info HEAT 134882
+	heatLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134882")
+	heat_last = json.loads(heatLG.content)
+	# Next Game Info HEAT 134882
+	heatNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134882")
+	heat_next = json.loads(heatNG.content)
+
+	notfound = "If no game shows, it's because this team didn't qualify for the remainder of the 2020 season or the next game is to be determined"
+
+	return render(request, "heat.html", {'heat_info': heat_info, 'heat_last': heat_last, 'heat_next': heat_next,'notfound': notfound})
 
 
 ####################################################################################################################################################
@@ -244,7 +287,7 @@ def bucks(request):
 
 	notfound = "If no game shows, it's because this team didn't qualify for the remainder of the 2020 season or the next game is to be determined"
 
-	return render(request, "bucks.html", {'bucks': bucks_info, 'bucks_last': bucks_last, 'bucks_next': bucks_next, 'notfound': notfound})
+	return render(request, "bucks.html", {'bucks_info': bucks_info, 'bucks_last': bucks_last, 'bucks_next': bucks_next, 'notfound': notfound})
 
 
 ####################################################################################################################################################
