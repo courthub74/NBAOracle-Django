@@ -120,6 +120,27 @@ def bulls(request):
 
 ####################################################################################################################################################
 
+#CLEVELAND
+def cavaliers(request):
+	import requests
+	import json
+
+	# CAVALIERS General Info 134871
+	cavsRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Cleveland%20Cavaliers")
+	cavs_info = json.loads(cavsRE.content)
+	# CAVALIERS Last Game 134871
+	cavsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134871")
+	cavs_last = json.loads(cavsLG.content)
+	# CAVALIERS Next Game 134871
+	cavsNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134871")
+	cavs_next = json.loads(cavsNG.content)
+
+	notfound = "If no game shows, it's because this team didn't qualify for the remainder of the 2020 season or the next game is to be determined"
+
+	return render(request, "cavaliers.html", {'cavs_info': cavs_info, 'cavs_last': cavs_last, 'cavs_next': cavs_next, 'notfound': notfound})
+
+####################################################################################################################################################
+
 #DALLAS
 def mavericks(request):
 	import requests
@@ -206,7 +227,7 @@ def rockets(request):
 ####################################################################################################################################################
 
 
-#LAKERS
+#LOS ANGELES LAKERS
 def lakers(request):
 	import requests
 	import json
@@ -227,7 +248,7 @@ def lakers(request):
 
 ####################################################################################################################################################
 
-#CLIPPERS
+#LOS ANGELES CLIPPERS
 def clippers(request):
 	import requests
 	import json
@@ -245,6 +266,27 @@ def clippers(request):
 	notfound = "If no game shows, it's because this team didn't qualify for the remainder of the 2020 season or the next game is to be determined"
 
 	return render(request, "clippers.html", {'clippers_info': clippers_info, 'clippers_last': clippers_last, 'clippers_next': clippers_next,'notfound': notfound})
+
+####################################################################################################################################################
+
+#MEMPHIS
+def grizzlies(request):
+	import requests
+	import json
+
+	# GRIZZLIES General Info 134877
+	grizzRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Memphis_Grizzlies")
+	grizz_info = json.loads(grizzRE.content)
+	# Last Game info for GRIZZLIES 134877
+	grizzLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134877")
+	grizz_last = json.loads(grizzLG.content)
+	# Next Game info for GRIZZLIES 134877
+	grizzNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134877")
+	grizz_next = json.loads(grizzNG.content)
+
+	notfound = "If no game shows, it's because this team didn't qualify for the remainder of the 2020 season or the next game is to be determined"
+
+	return render(request, "grizzlies.html", {'grizz_info': grizz_info, 'grizz_last': grizz_last, 'grizz_next': grizz_next,'notfound': notfound})
 
 ####################################################################################################################################################
 
@@ -292,7 +334,47 @@ def bucks(request):
 
 ####################################################################################################################################################
 
+#MINNESOTA 
+def twolves(request):
+	import requests
+	import json
 
+	# T WOLVES General Info 134886
+	twolvesRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Minnesota%20Timberwolves")
+	twolves_info = json.loads(twolvesRE.content)
+	# T-WOLVES Last Game Info
+	twolvesLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134886")
+	twolves_last = json.loads(twolvesLG.content)
+	# T-WOLVES Next Game Info
+	twolvesNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134886")
+	twolves_next = json.loads(twolvesNG.content)
+
+	notfound = "If no game shows, it's because this team didn't qualify for the remainder of the 2020 season or the next game is to be determined"
+
+	return render(request, "twolves.html", {'twolves_info': twolves_info, 'twolves_last': twolves_last, 'twolves_next': twolves_next, 'notfound': notfound})
+
+####################################################################################################################################################
+
+#NEW YORK
+def knicks(request):
+	import requests
+	import json
+
+	# KNICKS General Info 134862
+	knicksRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=new_york_knicks")
+	knicks_info = json.loads(knicksRE.content)
+	# KNICKS Last Game 134862
+	knicksLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134862")
+	knicks_last = json.loads(knicksLG.content)
+	# KNICKS Next Game 134862
+	knicksNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134862")
+	knicks_next = json.loads(knicksNG.content)
+
+	notfound = "If no game shows, it's because this team didn't qualify for the remainder of the 2020 season or the next game is to be determined"
+
+	return render(request, "knicks.html", {'knicks_info': knicks_info, 'knicks_last': knicks_last, 'knicks_next': knicks_next, 'notfound': notfound})
+
+####################################################################################################################################################
 #PELICANS
 def pelicans(request):
 	import requests

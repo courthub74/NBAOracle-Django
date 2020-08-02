@@ -13,8 +13,8 @@
 </style>
 
 <center><label class="white"><strong>Team Selected:</strong></label></center>
-<center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fworldsportlogos.com%2Fwp-content%2Fuploads%2F2019%2F09%2FHouston-Rockets-logo.png&f=1&nofb=1" width="320" height="210"></center>
-<center><label class="white"><strong>Houston Rockets</strong></label></center>
+<center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs3.amazonaws.com%2Ffreebiesupply%2Flarge%2F2x%2Fnew-york-knicks-logo-transparent.png&f=1&nofb=1" width="300" height="250"></center>
+<center><label class="white"><strong>New York Knicks</strong></label></center>
 
 <hr>
 
@@ -22,7 +22,7 @@
 		{% csrf_token %}
 		<center>
 			<label><strong>Year Formed:</strong></label>
-			{% for x in rockets_info.teams %}
+			{% for x in knicks_info.teams %}
 				<textarea class="form-control form-control-sm" type="text">{{ x.intFormedYear }}</textarea> 
 			{% endfor %}
 		</center>
@@ -33,7 +33,7 @@
 		{% csrf_token %}
 		<center>
 			<label><strong>Team Stadium:</strong></label>
-			{% for x in rockets_info.teams %}
+			{% for x in knicks_info.teams %}
 				<textarea class="form-control form-control-sm" type="text">{{ x.strStadium }}</textarea> 
 			{% endfor %}
 		</center>
@@ -46,7 +46,7 @@
 		<center>
 			<label><strong>Last 5 Games Played:</strong></label>
 			<br><br>
-			{% for x in rockets_last.results %}
+			{% for x in knicks_last.results %}
 			{{x.dateEventLocal}}
 			<textarea class="form-control form-control-sm" type="text">Home: {{ x.strHomeTeam}} {{ x.intHomeScore }} | Away: {{ x.strAwayTeam }} {{ x.intAwayScore }}</textarea><br>
 			{% endfor %}
@@ -61,7 +61,7 @@
 			<label><strong>Next Game(s):</strong></label>
 			<br>
 
-				{% for x in rockets_next.events %}
+				{% for x in knicks_next.events %}
 				<textarea class="form-control form-control-sm" type="text">{{ x.strEventAlternate }}</textarea> 
 				{% endfor %}
 				<center><small>{{ notfound }}</small></center>
