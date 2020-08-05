@@ -21,6 +21,8 @@ urlpatterns = [
     path('pelicans/', views.pelicans, name="pelicans"),
     path('hawks/', views.hawks, name="hawks"),
     path('rockets/', views.rockets, name="rockets"),
+    path('sixers/', views.sixers, name="sixers"),
+    path('spurs/', views.spurs, name="spurs"),
     path('twolves/', views.twolves, name="twolves"),
     path('warriors/', views.warriors, name="warriors"),
 ]
