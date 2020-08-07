@@ -226,6 +226,49 @@ def rockets(request):
 
 ####################################################################################################################################################
 
+#INDIANA
+def pacers(request):
+	import requests
+	import json
+
+	# PACERS General Info 134873
+	pacersRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Indiana%20Pacers")
+	pacers_info = json.loads(pacersRE.content)
+	# PACERS Last Game Info
+	pacersLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134873")
+	pacers_last = json.loads(pacersLG.content)
+	# PACERS Next Game Info
+	pacersNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134873")
+	pacers_next = json.loads(pacersNG.content)
+
+	notfound = "If no game shows, it's because this team didn't qualify for the remainder of the 2020 season or the next game is to be determined"
+
+	return render(request, "pacers.html", {'pacers_info': pacers_info, 'pacers_last': pacers_last, 'pacers_next': pacers_next, 'notfound': notfound})
+
+####################################################################################################################################################
+
+#SACRAMENTO
+def kings(request):
+	import requests
+	import json
+
+	# KINGS General Info 134869
+	kingsRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Sacramento_Kings")
+	kings_info = json.loads(kingsRE.content)
+	# KINGS Last Game 134869
+	kingsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134869")
+	kings_last = json.loads(kingsLG.content)
+	# KINGS Next Game 134869
+	kingsNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134869")
+	kings_next = json.loads(kingsNG.content)
+
+	notfound = "If no game shows, it's because this team didn't qualify for the remainder of the 2020 season or the next game is to be determined"
+
+	return render(request, "kings.html", {'kings_info': kings_info, 'kings_last': kings_last, 'kings_next': kings_next, 'notfound': notfound})
+
+
+####################################################################################################################################################
+
 
 #LOS ANGELES LAKERS
 def lakers(request):
