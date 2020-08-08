@@ -10,11 +10,23 @@
 		color: black;
 		font-size: 20px;
 	}
+	.black {
+		color: black;
+		font-size: 30px;
+	}
+	.big {
+		color: black;
+		font-size: 40px;
+	}
+	.scores {
+		color: black;
+		font-size: 15px;
+	}
 </style>
 
-<center><label class="white"><strong>Team Selected:</strong></label></center>
-<center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs3.amazonaws.com%2Ffreebiesupply%2Flarge%2F2x%2Fnew-york-knicks-logo-transparent.png&f=1&nofb=1" width="300" height="250"></center>
-<center><label class="white"><strong>New York Knicks</strong></label></center>
+<!-- <center><label class="white"><strong>Team Selected:</strong></label></center> -->
+<center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs3.amazonaws.com%2Ffreebiesupply%2Flarge%2F2x%2Fnew-york-knicks-logo-transparent.png&f=1&nofb=1" width="320" height="280"></center>
+<!-- <center><label class="white"><strong>New York Knicks</strong></label></center> -->
 
 <hr>
 
@@ -22,8 +34,9 @@
 		{% csrf_token %}
 		<center>
 			<label><strong>Year Formed:</strong></label>
-			{% for x in knicks_info.teams %}
-				<textarea class="form-control form-control-sm" type="text">{{ x.intFormedYear }}</textarea> 
+			{% for x in knicks_info.teams %}<br>
+			<span class="big"><strong>{{ x.intFormedYear }}</strong></span>
+				<!-- <textarea class="form-control form-control-sm" type="text">{{ x.intFormedYear }}</textarea> --> 
 			{% endfor %}
 		</center>
 	</form>
@@ -33,8 +46,9 @@
 		{% csrf_token %}
 		<center>
 			<label><strong>Team Stadium:</strong></label>
-			{% for x in knicks_info.teams %}
-				<textarea class="form-control form-control-sm" type="text">{{ x.strStadium }}</textarea> 
+			{% for x in knicks_info.teams %}<br>
+			<span class="big"><strong>{{ x.strStadium }}</strong></span>
+				<!-- <textarea class="form-control form-control-sm" type="text">{{ x.strStadium }}</textarea> --> 
 			{% endfor %}
 		</center>
 	</form>

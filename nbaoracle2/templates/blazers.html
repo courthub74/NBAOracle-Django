@@ -10,69 +10,87 @@
 		color: black;
 		font-size: 20px;
 	}
+	.black {
+		color: black;
+		font-size: 30px;
+	}
+	.big {
+		color: black;
+		font-size: 40px;
+	}
+	.scores {
+		color: black;
+		font-size: 15px;
+	}
 </style>
 
-<center><label class="white"><strong>Team Selected:</strong></label></center>
-<center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcontent.invisioncic.com%2Fr224567%2Fmonthly_2017_05%2FBlazers.png.498d69464806bfb719da205969a87d0f.png&f=1&nofb=1" width="250" height="250"></center>
-<center><label class="white"><strong>Portland Trail Blazers</strong></label></center>
 
-<hr>
-
-	<form method="POST">
-		{% csrf_token %}
-		<center>
-			<label><strong>Year Formed:</strong></label>
-			{% for x in portland_info.teams %}
-				<textarea class="form-control form-control-sm" type="text">{{ x.intFormedYear }}</textarea> 
-			{% endfor %}
-		</center>
-	</form>
-	<hr><br>
-
-	<form method="POST">
-		{% csrf_token %}
-		<center>
-			<label><strong>Team Stadium:</strong></label>
-			{% for x in portland_info.teams %}
-				<textarea class="form-control form-control-sm" type="text">{{ x.strStadium }}</textarea> 
-			{% endfor %}
-		</center>
-	</form>
-	<hr><br>
+<center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcontent.invisioncic.com%2Fr224567%2Fmonthly_2017_05%2FBlazers.png.498d69464806bfb719da205969a87d0f.png&f=1&nofb=1" width="280" height="300"></center>
 
 
-	<form method="POST">
-		{% csrf_token %}
-		<center>
-			<label><strong>Last 5 Games Played:</strong></label>
-			<br><br>
-			{% for x in portland_last.results %}
-			{{x.dateEventLocal}}
-			<textarea class="form-control form-control-sm" type="text">Home: {{ x.strHomeTeam}} {{ x.intHomeScore }} | Away: {{ x.strAwayTeam }} {{ x.intAwayScore }}</textarea><br>
-			{% endfor %}
-		</center>
-	</form>
 
-	<br><br><hr>
+	<br>
 
-	<form method="POST">
-		{% csrf_token %}
-		<center>
-			<label><strong>Next Game(s):</strong></label>
-			<br>
+	<div class="center">
+		<div class="card border-primary" style="max-width: 70rem;">
+		  	{% for x in portland_info.teams %}
+		    <div class="card-header text-dark">Year Formed:</div>
+		    <p class="card-text big">{{ x.intFormedYear }}</p>
+		    {% endfor %}
+		</div>
+	</div>
 
-				{% for x in portland_next.events %}
-				<textarea class="form-control form-control-sm" type="text">{{ x.strEventAlternate }}</textarea> 
+	<br>
+
+	<div class="center">
+		<div class="card border-primary" style="max-width: 70rem;">
+		  	{% for x in portland_info.teams %}
+		    <div class="card-header text-dark">Team Stadium:</div>
+		    <p class="card-text big">{{ x.strStadium }}</p>
+		    {% endfor %}
+		</div>
+	</div> 
+
+
+	<br>
+
+
+	<div class="center">
+		<div class="card border-primary" style="max-width: 70rem;">
+
+		  <div class="card-header text-dark">Last 5 Games Played:</div>
+
+		  	<div class="card-body text-dark">
+			  	{% for x in portland_last.results %}
+			  	
+				    <h5 class="card-title">{{x.dateEventLocal}}</h5>
+				    <p class="card-text">@{{ x.strHomeTeam}} {{ x.intHomeScore }} vs. {{ x.strAwayTeam }} {{ x.intAwayScore }}</p><hr>
+
+
 				{% endfor %}
-				<center><small>{{ notfound }}</small></center>
+									
+				    					<h5>Next Game(s):</h5>
+					    					{% for x in portland_next.events%}
+											 		<p class="card-title">{{ x.strEventAlternate }}</p>
+													<center><small>{{ notfound }}</small></center><br>
+											{% endfor %}
+										 	
+															
+			</div>				
 
-		</center>
-	</form>
-	<hr><br>
+			    					
+				    					
+										
+									
 
-	<hr>
+		</div>
+	</div>
+	
+	<br>
 
 </div>
+
+
 
 
 {% endblock %}
