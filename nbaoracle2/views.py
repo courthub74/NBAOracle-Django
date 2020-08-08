@@ -247,6 +247,27 @@ def pacers(request):
 
 ####################################################################################################################################################
 
+#ORLANDO
+def magic(request):
+	import requests
+	import json
+
+	# MAGIC General Info 134883
+	magicRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Orlando_Magic")
+	magic_info = json.loads(magicRE.content)
+	# MAGIC Last Game 134883
+	magicLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134883")
+	magic_last = json.loads(magicLG.content)
+	# MAGIC Next Game 134883
+	magicNG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventsnext.php?id=134883")
+	magic_next = json.loads(magicNG.content)
+
+	notfound = "If no game shows, it's because this team didn't qualify for the remainder of the 2020 season or the next game is to be determined"
+
+	return render(request, "magic.html", {'magic_info': magic_info, 'magic_last': magic_last, 'magic_next': magic_next, 'notfound': notfound})
+
+####################################################################################################################################################
+
 #SACRAMENTO
 def kings(request):
 	import requests
