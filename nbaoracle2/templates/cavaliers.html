@@ -25,68 +25,63 @@
 </style>
 
 <!-- <center><label class="white"><strong>Team Selected:</strong></label></center> -->
-<center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs3.amazonaws.com%2Ffreebiesupply%2Flarge%2F2x%2Fcleveland-cavaliers-logo-badge.png&f=1&nofb=1" width="350" height="300"></center>
+<center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs3.amazonaws.com%2Ffreebiesupply%2Flarge%2F2x%2Fcleveland-cavaliers-logo-badge.png&f=1&nofb=1" width="400" height="350"></center>
 <!-- <center><label class="white"><strong>Cleveland Cavaliers</strong></label></center> -->
 
-<hr>
+<br>
 
-	<form method="POST">
-		{% csrf_token %}
-		<center>
-			<label><strong>Year Formed:</strong></label>
-			{% for x in cavs_info.teams %}<br>
-			<span class="big"><strong>{{ x.intFormedYear }}</strong></span>
-				<!-- <textarea class="form-control form-control-sm" type="text">{{ x.intFormedYear }}</textarea> --> 
-			{% endfor %}
-		</center>
-	</form>
-	<hr><br>
+	<div class="center">
+		<div class="card border-primary" style="max-width: 70rem;">
+		  	{% for x in cavs_info.teams %}
+		    <div class="card-header text-dark">Year Formed:</div>
+		    <p class="card-text big">{{ x.intFormedYear }}</p>
+		    {% endfor %}
+		</div>
+	</div>
 
-	<form method="POST">
-		{% csrf_token %}
-		<center>
-			<label><strong>Team Stadium:</strong></label>
-			{% for x in cavs_info.teams %}<br>
-			<span class="big"><strong>{{ x.strStadium }}</strong></span>
-				<!-- <textarea class="form-control form-control-sm" type="text">{{ x.strStadium }}</textarea> --> 
-			{% endfor %}
-		</center>
-	</form>
-	<hr><br>
+	<br>
+
+	<div class="center">
+		<div class="card border-primary" style="max-width: 70rem;">
+		  	{% for x in cavs_info.teams %}
+		    <div class="card-header text-dark">Team Stadium:</div>
+		    <p class="card-text big">{{ x.strStadium }}</p>
+		    {% endfor %}
+		</div>
+	</div> 
 
 
-	<form method="POST">
-		{% csrf_token %}
-		<center>
-			<label><strong>Last 5 Games Played:</strong></label>
-			<br><br>
-			{% for x in cavs_last.results %}
-			{{x.dateEventLocal}}
-			<textarea class="form-control form-control-sm" type="text">Home: {{ x.strHomeTeam}} {{ x.intHomeScore }} | Away: {{ x.strAwayTeam }} {{ x.intAwayScore }}</textarea><br>
-			{% endfor %}
-		</center>
-	</form>
+	<br>
 
-	<br><br><hr>
 
-	<form method="POST">
-		{% csrf_token %}
-		<center>
-			<label><strong>Next Game(s):</strong></label>
-			<br>
+	<div class="center">
+		<div class="card border-primary" style="max-width: 70rem;">
 
-				{% for x in cavs_next.events %}
-				<textarea class="form-control form-control-sm" type="text">{{ x.strEventAlternate }}</textarea> 
-				{% endfor %}
-				<center><small>{{ notfound }}</small></center>
+		  <div class="card-header text-dark">Last 5 Games Played:</div>
 
-		</center>
-	</form>
-	<hr><br>
+		  	<div class="card-body text-dark">
+			  	{% for x in cavs_last.results %}
+			  	
+				    <h5 class="card-title">{{x.dateEventLocal}}</h5>
+				    <p class="card-text">@{{ x.strHomeTeam}} {{ x.intHomeScore }} vs. {{ x.strAwayTeam }} {{ x.intAwayScore }}</p><hr>
+				    {% endfor %}
 
-	<hr>
+				    					<h5>Next Game(s):</h5>
+				    						
+										 		<p class="card-title">{{ x.strEventAlternate }}</p>
+												<center><small>{{ notfound }}</small></center><br>
+																
+			</div>				
+
+			    										
+		</div>
+	</div>
+	
+	<br>
 
 </div>
+
+
 
 
 {% endblock %}

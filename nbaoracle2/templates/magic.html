@@ -24,67 +24,64 @@
 </style>
 
 <!-- <center><label class="black"><strong>Team Selected:</strong></label></center> -->
-<center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fworldsportlogos.com%2Fwp-content%2Fuploads%2F2018%2F03%2FOrlando-Magic-logo.png&f=1&nofb=1" width="350" height="200"></center>
+<center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fworldsportlogos.com%2Fwp-content%2Fuploads%2F2018%2F03%2FOrlando-Magic-logo.png&f=1&nofb=1" width="410" height="250"></center>
 <!-- <center><label class="big"><strong>Orlando Magic</strong></label></center> -->
 
-<hr>
+<br>
 
-	<form method="POST">
-		{% csrf_token %}
-		<center>
-			<label><strong>Year Formed:</strong></label>
-			{% for x in magic_info.teams %}<br>
-			<span class="big"><strong>{{ x.intFormedYear }}</strong></span>
-			<!-- <textarea class="form-control form-control-sm" type="text">{{ x.intFormedYear }}</textarea>  -->
-			{% endfor %}
-		</center>
-	</form>
-	<hr><br>
+	<div class="center">
+		<div class="card border-primary" style="max-width: 70rem;">
+		  	{% for x in magic_info.teams %}
+		    <div class="card-header text-dark">Year Formed:</div>
+		    <p class="card-text big">{{ x.intFormedYear }}</p>
+		    {% endfor %}
+		</div>
+	</div>
 
-	<form method="POST">
-		{% csrf_token %}
-		<center>
-			<label><strong>Team Stadium:</strong></label>
-			{% for x in magic_info.teams %}<br>
-			<span class="big"><strong>{{ x.strStadium }}</strong></span>
-			<!-- <textarea class="form-control form-control-sm" type="text">{{ x.strStadium }}</textarea>  -->
-			{% endfor %}
-		</center>
-	</form>
-	<hr><br>
+	<br>
+
+	<div class="center">
+		<div class="card border-primary" style="max-width: 70rem;">
+		  	{% for x in magic_info.teams %}
+		    <div class="card-header text-dark">Team Stadium:</div>
+		    <p class="card-text big">{{ x.strStadium }}</p>
+		    {% endfor %}
+		</div>
+	</div> 
 
 
-	<form method="POST">
-		{% csrf_token %}
-		<center>
-			<label><strong>Last 5 Games Played:</strong></label>
-			<br><br>
-			{% for x in magic_last.results %}
-			{{x.dateEventLocal}}
-			<!-- <span class="scores"><strong>Home: {{ x.strHomeTeam}} {{ x.intHomeScore }} | Away: {{ x.strAwayTeam }} {{ x.intAwayScore }}</strong></span><br> -->
-			<textarea class="form-control form-control-sm" type="text">Home: {{ x.strHomeTeam}} {{ x.intHomeScore }} | Away: {{ x.strAwayTeam }} {{ x.intAwayScore }}</textarea><hr>
-			{% endfor %}
-		</center>
-	</form>
+	<br>
 
 
+	<div class="center">
+		<div class="card border-primary" style="max-width: 70rem;">
 
+		  <div class="card-header text-dark">Last 5 Games Played:</div>
 
-	<form method="POST">
-		{% csrf_token %}
-		<center>
-			<label><strong>Next Game(s):</strong></label>
+		  	<div class="card-body text-dark">
+			  	{% for x in magic_last.results %}
+			  	
+				    <h5 class="card-title">{{x.dateEventLocal}}</h5>
+				    <p class="card-text">@{{ x.strHomeTeam}} {{ x.intHomeScore }} vs. {{ x.strAwayTeam }} {{ x.intAwayScore }}</p><hr>
+				    {% endfor %}
 
-					{% for x in magic_next.events %}
-					<textarea class="form-control form-control-sm" type="text">{{ x.strEventAlternate }}</textarea> 
-					{% endfor %}
-					<center><small>{{ notfound }}</small></center>
-			
-		</center>
-	</form>
-	<hr><br>
+				    					<h5>Next Game(s):</h5>
+				    						{% for x in magic_next.events %}
+										 		<p class="card-title">{{ x.strEventAlternate }}</p>
+												<center><small>{{ notfound }}</small></center><br>
+											{% endfor %}
+																
+			</div>				
+
+			    										
+		</div>
+	</div>
+	
+	<br>
 
 </div>
+
+
 
 
 {% endblock %}

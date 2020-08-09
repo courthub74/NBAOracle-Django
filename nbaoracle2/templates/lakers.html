@@ -27,11 +27,11 @@
 </style>
 
 
-<center><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Ffadeawayworld.com%2Fwp-content%2Fuploads%2F2017%2F06%2FLosAngeles_Lakers_logo.svg_.png%3Fx21867&f=1&nofb=1" width="300" height="180"></center>
+<center><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Ffadeawayworld.com%2Fwp-content%2Fuploads%2F2017%2F06%2FLosAngeles_Lakers_logo.svg_.png%3Fx21867&f=1&nofb=1" width="350" height="200"></center>
 
 
 
-	<br>
+<br>
 
 	<div class="center">
 		<div class="card border-primary" style="max-width: 70rem;">
@@ -59,30 +59,29 @@
 
 	<div class="center">
 		<div class="card border-primary" style="max-width: 70rem;">
+
 		  <div class="card-header text-dark">Last 5 Games Played:</div>
-		  <div class="card-body text-dark">
-		  	{% for x in lakers_last.results %}
-		    <h5 class="card-title">{{x.dateEventLocal}}</h5>
-		    <p class="card-text">@{{ x.strHomeTeam}} {{ x.intHomeScore }} vs. {{ x.strAwayTeam }} {{ x.intAwayScore }}</p><hr>
-		    {% endfor %}
-		  </div>
+
+		  	<div class="card-body text-dark">
+			  	{% for x in lakers_last.results %}
+			  	
+				    <h5 class="card-title">{{x.dateEventLocal}}</h5>
+				    <p class="card-text">@{{ x.strHomeTeam}} {{ x.intHomeScore }} vs. {{ x.strAwayTeam }} {{ x.intAwayScore }}</p><hr>
+				    {% endfor %}
+
+				    					<h5>Next Game(s):</h5>
+				    						{% for x in lakers_next.events %}
+										 		<p class="card-title">{{ x.strEventAlternate }}</p>
+												<center><small>{{ notfound }}</small></center><br>
+											{% endfor %}
+																
+			</div>				
+
+			    										
 		</div>
 	</div>
-
-  <br>
-
-  			<div class="center">
-				<div class="card border-primary" style="max-width: 70rem;">
-	  				{% for x in lakers_next.events %}
-			    		<div class="card-header text-dark"><b>Next Game(s):</b></div><br>
-							 <h5 class="card-title">@{{ x.strEventAlternate }}</h5><hr>
-							 <center><small>{{ notfound }}</small></center><br>
-					{% endfor %}	 
-						</div>
-				</div>
-			</div>
-
-	<br><br>
+	
+	<br>
 
 </div>
 
