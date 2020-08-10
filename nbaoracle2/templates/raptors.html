@@ -24,14 +24,14 @@
 </style>
 
 <!-- <center><label class="white"><strong>Team Selected:</strong></label></center> -->
-<center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flh6.googleusercontent.com%2Fproxy%2FPZjM6pgFxUlyJxZYHBNVN--oadH5wLAxUdDUgFTySu270THUhIlUhZbPSnOpzJk0OaOvMXOPLJzvpWj3JPcG3H3V8XmKl9R5TA-DvfEnPxdLF0ENZ8fTTfYhvXxi0ZqPE8y6Qsff8Nmpo8EyhpM%3Dw1200-h630-p-k-no-nu&f=1&nofb=1" width="400" height="400"></center>
-<!-- <center><label class="white"><strong>Golden State Warriors</strong></label></center> -->
+<center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2Fthumb%2F3%2F36%2FToronto_Raptors_logo.svg%2F765px-Toronto_Raptors_logo.svg.png&f=1&nofb=1" width="300" height="300"></center>
+<!-- <center><label class="white"><strong>Indiana Pacers</strong></label></center> -->
 
 <br>
 
 	<div class="center">
 		<div class="card border-primary" style="max-width: 70rem;">
-		  	{% for x in warriors_info.teams %}
+		  	{% for x in raptors_info.teams %}
 		    <div class="card-header text-dark">Year Formed:</div>
 		    <p class="card-text big">{{ x.intFormedYear }}</p>
 		    {% endfor %}
@@ -42,7 +42,7 @@
 
 	<div class="center">
 		<div class="card border-primary" style="max-width: 70rem;">
-		  	{% for x in warriors_info.teams %}
+		  	{% for x in raptors_info.teams %}
 		    <div class="card-header text-dark">Team Stadium:</div>
 		    <p class="card-text big">{{ x.strStadium }}</p>
 		    {% endfor %}
@@ -59,17 +59,18 @@
 		  <div class="card-header text-dark">Last 5 Games Played:</div>
 
 		  	<div class="card-body text-dark">
-			  	{% for x in warriors_last.results %}
+			  	{% for x in raptors_last.results %}
 			  	
 				    <h5 class="card-title">{{x.dateEventLocal}}</h5>
 				    <p class="card-text">@{{ x.strHomeTeam}} {{ x.intHomeScore }} vs. {{ x.strAwayTeam }} {{ x.intAwayScore }}</p><hr>
 				    {% endfor %}
 
 				    					<h5>Next Game(s):</h5>
-				    						
+				    						{% for x in raptors_next.events %}
 										 		<p class="card-title">{{ x.strEventAlternate }}</p>
 												<center><small>{{ notfound }}</small></center>
-													
+											{% endfor %}
+																
 			</div>				
 
 			    										
