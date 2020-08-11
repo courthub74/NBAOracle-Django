@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base2.html' %}
 
 {% block content %}
 
@@ -16,17 +16,17 @@
 	}
 	.big {
 		color: black;
-		font-size: 40px;
+		font-size: 20px;
 	}
 	.scores {
 		color: black;
-		font-size: 15px;
+		font-size: 12px;
 	}
 </style>
 
+<br>
 
-
-<center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fworldsportlogos.com%2Fwp-content%2Fuploads%2F2018%2F03%2FMilwaukee-Bucks-logo.png&f=1&nofb=1" width="530" height="360"></center>
+<center><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi.cdn.turner.com%2Fnba%2Fnba%2F.element%2Fimg%2F1.0%2Fteamsites%2Flogos%2Fteamlogos_500x500%2Fmil.png&f=1&nofb=1" width="270" height="230"></center>
 
 
 	<br>
@@ -64,14 +64,15 @@
 			  	{% for x in bucks_last.results %}
 			  	
 				    <h5 class="card-title">{{x.dateEventLocal}}</h5>
-				    <p class="card-text">@{{ x.strHomeTeam}} {{ x.intHomeScore }} vs. {{ x.strAwayTeam }} {{ x.intAwayScore }}</p><hr>
+				    <p class="card-text scores">@{{ x.strHomeTeam}} {{ x.intHomeScore }} vs. {{ x.strAwayTeam }} {{ x.intAwayScore }}</p><hr>
 				    {% endfor %}
 
 				    					<h5>Next Game(s):</h5>
 				    						{% for x in bucks_next.events %}
-										 		<p class="card-title">{{ x.strEventAlternate }}</p>
-												<center><small>{{ notfound }}</small></center><br>
-											{% endfor %}					
+										 		<p class="card-title scores">{{ x.strEventAlternate }}</p>
+											{% endfor %}
+											<hr>
+											<center><small><p class="text-muted">{{ notfound }}</p></small></center><br>					
 			</div>				
 
 			    					

@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base2.html' %}
 
 {% block content %}
 
@@ -16,16 +16,18 @@
 	}
 	.big {
 		color: black;
-		font-size: 40px;
+		font-size: 20px;
 	}
 	.scores {
 		color: black;
-		font-size: 15px;
+		font-size: 12px;
 	}
 </style>
 
+<br>
+
 <!-- <center><label class="white"><strong>Team Selected:</strong></label></center> -->
-<center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.vexels.com%2Fmedia%2Fusers%2F3%2F129771%2Fisolated%2Fpreview%2Fdade8ca5d35416bf3759cde239a446e1-chicago-bulls-logo-by-vexels.png&f=1&nofb=1" width="300" height="280"></center>
+<center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.vexels.com%2Fmedia%2Fusers%2F3%2F129771%2Fisolated%2Fpreview%2Fdade8ca5d35416bf3759cde239a446e1-chicago-bulls-logo-by-vexels.png&f=1&nofb=1" width="280" height="250"></center>
 <!-- <center><label class="white"><strong>Chicago Bulls</strong></label></center> -->
 
 	<br>
@@ -63,13 +65,14 @@
 			  	{% for x in bulls_last.results %}
 			  	
 				    <h5 class="card-title">{{x.dateEventLocal}}</h5>
-				    <p class="card-text">@{{ x.strHomeTeam}} {{ x.intHomeScore }} vs. {{ x.strAwayTeam }} {{ x.intAwayScore }}</p><hr>
+				    <p class="card-text scores">@{{ x.strHomeTeam}} {{ x.intHomeScore }} vs. {{ x.strAwayTeam }} {{ x.intAwayScore }}</p><hr>
 				    {% endfor %}
 
 				    					<h5>Next Game(s):</h5>
 				    						
-										 		<p class="card-title">{{ x.strEventAlternate }}</p>
-												<center><small>{{ notfound }}</small></center><br>
+										 		<p class="card-title scores">{{ x.strEventAlternate }}</p>
+										 		<hr>
+												<center><small><p class="text-muted">{{ notfound }}</p></small></center><br>
 																
 			</div>				
 

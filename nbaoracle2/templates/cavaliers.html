@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base2.html' %}
 
 {% block content %}
 
@@ -16,16 +16,16 @@
 	}
 	.big {
 		color: black;
-		font-size: 40px;
+		font-size: 20px;
 	}
 	.scores {
 		color: black;
-		font-size: 15px;
+		font-size: 12px;
 	}
 </style>
 
 <!-- <center><label class="white"><strong>Team Selected:</strong></label></center> -->
-<center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs3.amazonaws.com%2Ffreebiesupply%2Flarge%2F2x%2Fcleveland-cavaliers-logo-badge.png&f=1&nofb=1" width="400" height="350"></center>
+<center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs3.amazonaws.com%2Ffreebiesupply%2Flarge%2F2x%2Fcleveland-cavaliers-logo-badge.png&f=1&nofb=1" width="320" height="280"></center>
 <!-- <center><label class="white"><strong>Cleveland Cavaliers</strong></label></center> -->
 
 <br>
@@ -63,13 +63,14 @@
 			  	{% for x in cavs_last.results %}
 			  	
 				    <h5 class="card-title">{{x.dateEventLocal}}</h5>
-				    <p class="card-text">@{{ x.strHomeTeam}} {{ x.intHomeScore }} vs. {{ x.strAwayTeam }} {{ x.intAwayScore }}</p><hr>
+				    <p class="card-text scores">@{{ x.strHomeTeam}} {{ x.intHomeScore }} vs. {{ x.strAwayTeam }} {{ x.intAwayScore }}</p><hr>
 				    {% endfor %}
 
 				    					<h5>Next Game(s):</h5>
 				    						
-										 		<p class="card-title">{{ x.strEventAlternate }}</p>
-												<center><small>{{ notfound }}</small></center><br>
+										 		<p class="card-title scores">{{ x.strEventAlternate }}</p>
+										 		<hr>
+												<center><small><p class="text-muted">{{ notfound }}</p></small></center><br>
 																
 			</div>				
 

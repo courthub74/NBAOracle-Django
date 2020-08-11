@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base2.html' %}
 
 {% block content %}
 
@@ -15,15 +15,17 @@
 	}
 	.big {
 		color: black;
-		font-size: 40px;
+		font-size: 20px;
 	}
 	.scores {
 		color: black;
-		font-size: 15px;
+		font-size: 12px;
 	}
 </style>
 
-<center><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.stickpng.com%2Fassets%2Fimages%2F58419be4a6515b1e0ad75a58.png&f=1&nofb=1" width="370" height="350"></center>
+<br>
+
+<center><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.stickpng.com%2Fassets%2Fimages%2F58419be4a6515b1e0ad75a58.png&f=1&nofb=1" width="250" height="250"></center>
 
 <br>
 
@@ -60,13 +62,14 @@
 			  	{% for x in hawks_last.results %} <!--hawks_last.results has become the key called x.  The value 'strHomeTeam is called below' -->
 			  	
 				    <h5 class="card-title">{{x.dateEventLocal}}</h5>
-				    <p class="card-text">@{{ x.strHomeTeam}} {{ x.intHomeScore }} vs. {{ x.strAwayTeam }} {{ x.intAwayScore }}</p><hr>
+				    <p class="card-text scores">@{{ x.strHomeTeam}} {{ x.intHomeScore }} vs. {{ x.strAwayTeam }} {{ x.intAwayScore }}</p><hr>
 				    {% endfor %}
 
 				    					<h5>Next Game(s):</h5>
 				    						
-										 		<p class="card-title">{{ x.strEventAlternate }}</p>
-												<center><small>{{ notfound }}</small></center><br>
+										 		<p class="card-title scores">{{ x.strEventAlternate }}</p>
+										 		<hr>
+												<center><small><p class="text-muted">{{ notfound }}</p></small></center><br>
 																
 			</div>				
 
