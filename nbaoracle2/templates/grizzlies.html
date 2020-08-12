@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base2.html' %}
 
 {% block content %}
 
@@ -16,16 +16,18 @@
 	}
 	.big {
 		color: black;
-		font-size: 40px;
+		font-size: 20px;
 	}
 	.scores {
 		color: black;
-		font-size: 15px;
+		font-size: 12px;
 	}
 </style>
 
+<br>
+
 <!-- <center><label class="white"><strong>Team Selected:</strong></label></center> -->
-<center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fworldsportlogos.com%2Fwp-content%2Fuploads%2F2019%2F07%2FMemphis-Grizzlies-logo.png&f=1&nofb=1" width="600" height="350"></center>
+<center><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fworldsportlogos.com%2Fwp-content%2Fuploads%2F2019%2F07%2FMemphis-Grizzlies-logo.png&f=1&nofb=1" width="320" height="220"></center>
 <!-- <center><label class="white"><strong>Memphis Grizzlies</strong></label></center> -->
 
 <br>
@@ -63,14 +65,15 @@
 			  	{% for x in grizz_last.results %}
 			  	
 				    <h5 class="card-title">{{x.dateEventLocal}}</h5>
-				    <p class="card-text">@{{ x.strHomeTeam}} {{ x.intHomeScore }} vs. {{ x.strAwayTeam }} {{ x.intAwayScore }}</p><hr>
+				    <p class="card-text scores">@{{ x.strHomeTeam}} {{ x.intHomeScore }} vs. {{ x.strAwayTeam }} {{ x.intAwayScore }}</p><hr>
 				    {% endfor %}
 
 				    					<h5>Next Game(s):</h5>
 				    						{% for x in grizz_next.events %}
-										 		<p class="card-title">{{ x.strEventAlternate }}</p>
-												<center><small>{{ notfound }}</small></center><br>
-											{% endfor %}					
+										 		<p class="card-title scores">{{ x.strEventAlternate }}</p>
+											{% endfor %}	
+											<hr>
+											<center><small><p class="text-muted">{{ notfound }}</p></small></center>				
 			</div>				
 
 			    										
