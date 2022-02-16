@@ -19,7 +19,7 @@ def hawks(request):
 	import json
 
 	# ATLANTA General Info 134880
-	hawksRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Atlanta%20Hawks")
+	hawksRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=Atlanta%20Hawks")
 	hawks_info = json.loads(hawksRE.content)
 
 	# ATLANTA Last Game 134880
@@ -45,7 +45,7 @@ def celtics(request):
 	import json
 
 	# CELTICS General Info 134860
-	celticsRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Boston%20Celtics")
+	celticsRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=Boston%20Celtics")
 	celtics_info = json.loads(celticsRE.content)
 	# CELTICS Last Game 134860
 	celticsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134860")
@@ -67,7 +67,7 @@ def nets(request):
 	import json
 
 	# NETS General Info 134861
-	netsRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Brooklyn%20Nets")
+	netsRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=Brooklyn%20Nets")
 	nets_info = json.loads(netsRE.content)
 	# NETS Last Game 134861
 	netsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134861")
@@ -88,7 +88,7 @@ def hornets(request):
 	import json
 
 	# HORNETS General Info 134881
-	hornetsRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Charlotte%20Hornets")
+	hornetsRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=Charlotte%20Hornets")
 	hornets_info = json.loads(hornetsRE.content)
 	# HORNETS Last Game Info 134881
 	hornetsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134881")
@@ -109,7 +109,7 @@ def bulls(request):
 	import json
 
 	# BULLS General Info 134870
-	bullsRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Chicago%20Bulls")
+	bullsRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=Chicago%20Bulls")
 	bulls_info = json.loads(bullsRE.content)
 	# BULLS Last Game Info 134870
 	bullsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134870")
@@ -130,7 +130,7 @@ def cavaliers(request):
 	import json
 
 	# CAVALIERS General Info 134871
-	cavsRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Cleveland%20Cavaliers")
+	cavsRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=Cleveland%20Cavaliers")
 	cavs_info = json.loads(cavsRE.content)
 	# CAVALIERS Last Game 134871
 	cavsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134871")
@@ -151,7 +151,7 @@ def mavericks(request):
 	import json
 
 	# MAVERICKS General Info 134875
-	mavsRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Dallas%20Mavericks")
+	mavsRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=Dallas%20Mavericks")
 	mavs_info = json.loads(mavsRE.content)
 	# MAVERICKS Last Game 134875
 	mavsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134875")
@@ -172,7 +172,7 @@ def nuggets(request):
 	import json
 
 	# NUGGETS Info Parsed 134885
-	nuggetsRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Denver_Nuggets")
+	nuggetsRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=Denver_Nuggets")
 	nuggets_info = json.loads(nuggetsRE.content)
 	# NUGGETS Last Game 134885
 	nuggetsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134885")
@@ -194,7 +194,7 @@ def pistons(request):
 	import json
 
 	# PISTONS General Info 134872
-	pistonsRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Detroit%20Pistons")
+	pistonsRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=Detroit%20Pistons")
 	pistons_info = json.loads(pistonsRE.content)
 	# PISTONS Last Game 134872
 	pistonsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134872")
@@ -215,7 +215,7 @@ def rockets(request):
 	import json
 
 	# ROCKETS Info 134876
-	rocketsRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Houston%20Rockets")
+	rocketsRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=Houston%20Rockets")
 	rockets_info = json.loads(rocketsRE.content)
 	# ROCKETS Last Game Info 134876
 	rocketsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134876")
@@ -236,7 +236,7 @@ def pacers(request):
 	import json
 
 	# PACERS General Info 134873
-	pacersRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Indiana%20Pacers")
+	pacersRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=Indiana%20Pacers")
 	pacers_info = json.loads(pacersRE.content)
 	# PACERS Last Game Info
 	pacersLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134873")
@@ -257,7 +257,7 @@ def jazz(request):
 	import json
 
 	# JAZZ General Info 134879
-	jazzRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Utah_jazz")
+	jazzRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=Utah_jazz")
 	jazz_info = json.loads(jazzRE.content)
 	# JAZZ Last Game 134879
 	jazzLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134889")
@@ -278,7 +278,7 @@ def magic(request):
 	import json
 
 	# MAGIC General Info 134883
-	magicRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Orlando_Magic")
+	magicRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=Orlando_Magic")
 	magic_info = json.loads(magicRE.content)
 	# MAGIC Last Game 134883
 	magicLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134883")
@@ -299,7 +299,7 @@ def kings(request):
 	import json
 
 	# KINGS General Info 134869
-	kingsRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Sacramento_Kings")
+	kingsRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=Sacramento_Kings")
 	kings_info = json.loads(kingsRE.content)
 	# KINGS Last Game 134869
 	kingsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134869")
@@ -321,7 +321,7 @@ def lakers(request):
 	import requests
 	import json
 	# KCal the LAKERS are playing 134867
-	lakersRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Los_Angeles_Lakers")
+	lakersRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=Los_Angeles_Lakers")
 	lakers_info = json.loads(lakersRE.content)
 	# LAKERS last game info
 	lakersLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134867")
@@ -343,7 +343,7 @@ def clippers(request):
 	import json
 
 	# CLIPPERS General Info 134866
-	clippersRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Los%20Angeles%20Clippers")
+	clippersRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=Los%20Angeles%20Clippers")
 	clippers_info = json.loads(clippersRE.content)
 	# CLIPPERS last game info 134866
 	clippersLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134866")
@@ -364,7 +364,7 @@ def grizzlies(request):
 	import json
 
 	# GRIZZLIES General Info 134877
-	grizzRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Memphis_Grizzlies")
+	grizzRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=Memphis_Grizzlies")
 	grizz_info = json.loads(grizzRE.content)
 	# Last Game info for GRIZZLIES 134877
 	grizzLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134877")
@@ -385,7 +385,7 @@ def heat(request):
 	import json
 
 	# HEAT General Info 134882
-	heatRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Miami_Heat")
+	heatRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=Miami_Heat")
 	heat_info = json.loads(heatRE.content)
 	# Last Game Info HEAT 134882
 	heatLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134882")
@@ -407,7 +407,7 @@ def bucks(request):
 	import json
 
 	# MILWAUKEE BUCKS General Info 134874
-	bucksRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Milwaukee_Bucks")
+	bucksRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=Milwaukee_Bucks")
 	bucks_info = json.loads(bucksRE.content)
 	# Last Game info for BUCKS 134874
 	bucksLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134874")
@@ -429,7 +429,7 @@ def twolves(request):
 	import json
 
 	# T WOLVES General Info 134886
-	twolvesRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Minnesota%20Timberwolves")
+	twolvesRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=Minnesota%20Timberwolves")
 	twolves_info = json.loads(twolvesRE.content)
 	# T-WOLVES Last Game Info
 	twolvesLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134886")
@@ -450,7 +450,7 @@ def knicks(request):
 	import json
 
 	# KNICKS General Info 134862
-	knicksRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=new_york_knicks")
+	knicksRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=new_york_knicks")
 	knicks_info = json.loads(knicksRE.content)
 	# KNICKS Last Game 134862
 	knicksLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134862")
@@ -471,7 +471,7 @@ def thunder(request):
 	import json
 
 	# OKLAHOMA General Info 134887
-	thunderRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Oklahoma_City_Thunder")
+	thunderRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=Oklahoma_City_Thunder")
 	thunder_info = json.loads(thunderRE.content)
 	# OKLAHOMA Last Game 134887
 	thunderLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134887")
@@ -492,7 +492,7 @@ def pelicans(request):
 	import json
 
 	# PELICANS General Info 134878
-	pelicansRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=New%20Orleans%20Pelicans")
+	pelicansRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=New%20Orleans%20Pelicans")
 	pelicans_info = json.loads(pelicansRE.content)
 	# PELICANS Last Game 134878
 	pelicansLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134878")
@@ -513,7 +513,7 @@ def raptors(request):
 	import json
 
 	# RAPTORS General Info 134864
-	raptorsRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Toronto_Raptors")
+	raptorsRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=Toronto_Raptors")
 	raptors_info = json.loads(raptorsRE.content)
 	# RAPTORS Last Game 134864
 	raptorsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134864")
@@ -534,7 +534,7 @@ def sixers(request):
 	import json
 
 	#SIXERS General Info 134863
-	sixersRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=philadelphia_76ers")
+	sixersRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=philadelphia_76ers")
 	sixers_info = json.loads(sixersRE.content)
 	#SIXERS Last Game 134863
 	sixersLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134863")
@@ -555,7 +555,7 @@ def spurs(request):
 	import json
 
 	# SPURS General Info 134879
-	spursRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=San_Antonio_Spurs")
+	spursRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=San_Antonio_Spurs")
 	spurs_info = json.loads(spursRE.content)
 	# SPURS Last Game 134879
 	spursLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134879")
@@ -576,7 +576,7 @@ def suns(request):
 	import json
 
 	# SUNS General Info 134868
-	sunsRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Phoenix_Suns")
+	sunsRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=Phoenix_Suns")
 	suns_info = json.loads(sunsRE.content)
 	# SUNS Last Game 134868
 	sunsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134868")
@@ -597,7 +597,7 @@ def trailblazers(request):
 	import json
 
 	# PORTLAND General Info 134888
-	portlandRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Portland_Trail_Blazers")
+	portlandRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=Portland_Trail_Blazers")
 	portland_info = json.loads(portlandRE.content)
 	# PORTLAND Last Game 134888
 	portlandLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134888")
@@ -618,7 +618,7 @@ def warriors(request):
 	import json
 
 	# WARRIORS General Info 134865
-	warriorsRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Golden%20State%20Warriors")
+	warriorsRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=Golden%20State%20Warriors")
 	warriors_info = json.loads(warriorsRE.content)
 	# WARRIORS Last Game 134865
 	warriorsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134865")
@@ -639,7 +639,7 @@ def wizards(request):
 	import json
 
 	# WIZARDS General Info 134884
-	wizardsRE = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Washington_Wizards")
+	wizardsRE = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/searchteams.php?t=Washington_Wizards")
 	wizards_info = json.loads(wizardsRE.content)
 	# WIZARDS Last Game 134884
 	wizardsLG = requests.get("https://www.thesportsdb.com/api/v1/json/4013017/eventslast.php?id=134884")
